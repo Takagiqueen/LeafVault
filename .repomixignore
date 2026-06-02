@@ -1,0 +1,51 @@
+# Secrets
+.env
+.env.local
+.env.production
+.env.docker
+
+# Runtime files
+data/**
+uploads/**
+static/images/**
+data.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+*.log
+*.pid
+uvicorn*.log
+uvicorn*.pid
+
+# Dependencies / cache
+venv/**
+.venv/**
+node_modules/**
+__pycache__/**
+.pytest_cache/**
+.mypy_cache/**
+.ruff_cache/**
+.cache/**
+dist/**
+build/**
+
+# Generated reports
+repomix-output*
+project-tree.txt
+
+# Heavy assets
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.zip
+# Local IDE / temporary files
+.cursor/**
+.tmp/**
+.local-backup/**
+tmp/**
+logs/**

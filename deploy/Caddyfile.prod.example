@@ -1,0 +1,3 @@
+{$LEAFVAULT_DOMAIN} {
+    reverse_proxy leafvault:8000
+}

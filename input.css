@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* 日记图片 hover 只使用 transform/阴影，不改变布局，避免恢复后图片预览轻微闪烁。 */
+  .diary-img-stable {
+    display: block;
+    transform: translateZ(0);
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    backface-visibility: hidden;
+  }
+
+  .diary-img-stable:hover {
+    opacity: .94;
+    transform: translateZ(0) scale(1.01);
+    box-shadow: 0 14px 30px rgba(15, 118, 110, .12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diary-img-stable {
+    transition: none;
+  }
+
+  .diary-img-stable:hover {
+    transform: none;
+  }
+}

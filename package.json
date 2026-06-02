@@ -1,0 +1,38 @@
+{
+  "name": "leafvault",
+  "version": "1.0.0",
+  "description": "LeafVault - 个人生活记录与加密日记 Web 应用",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./static/output.css --minify",
+    "check:frontend": "python scripts/frontend_static_check.py",
+    "check:js": "python scripts/js_syntax_check.py",
+    "quality": "python scripts/quality_gate.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aili531/LeafVault.git"
+  },
+  "keywords": [
+    "leafvault",
+    "diary",
+    "pwa",
+    "fastapi",
+    "local-first",
+    "encrypted-diary"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aili531/LeafVault/issues"
+  },
+  "homepage": "https://github.com/aili531/LeafVault#readme",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.19"
+  }
+}

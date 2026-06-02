@@ -1,0 +1,42 @@
+services:
+  leafvault:
+    build: .
+    env_file:
+      - .env.production
+    expose:
+      - "8000"
+    # 生产 compose 只在 Docker 网络内暴露 8000；公网流量由 Caddy 的 80/443 反代进入。
+    # 本地 Docker 测试需要宿主机 8001 映射时，请叠加 docker-compose.local.yml。
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  caddy:
+    image: caddy:2
+    depends_on:
+      - leafvault
+    env_file:
+      - .env.production
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile.prod.example:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  caddy_data:
+  caddy_config:

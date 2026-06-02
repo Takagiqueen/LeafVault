@@ -1,0 +1,140 @@
+# =========================
+# Git
+# =========================
+.git
+.git/
+.gitignore
+
+# =========================
+# Local secrets
+# =========================
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# =========================
+# Python virtual environments
+# =========================
+venv
+venv/
+.venv
+.venv/
+
+# =========================
+# Python cache
+# =========================
+__pycache__
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.pytest_cache/
+.mypy_cache
+.mypy_cache/
+.ruff_cache
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov
+htmlcov/
+
+# =========================
+# Frontend dependencies and build cache
+# =========================
+node_modules
+node_modules/
+.cache
+.cache/
+.parcel-cache
+.parcel-cache/
+.vite
+.vite/
+dist
+dist/
+build
+build/
+.next
+.next/
+
+# =========================
+# Local IDE / AI tool cache
+# =========================
+.cursor
+.cursor/
+.tmp
+.tmp/
+tmp
+tmp/
+.local-backup
+.local-backup/
+.db_recovery
+.db_recovery/
+_db_recovery
+_db_recovery/
+
+# =========================
+# Local runtime data
+# =========================
+data
+data/
+backup
+backup/
+backups
+backups/
+logs
+logs/
+*.log
+*.pid
+uvicorn*.log
+uvicorn*.pid
+
+# =========================
+# SQLite databases
+# =========================
+data.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+# =========================
+# User uploaded files
+# =========================
+uploads
+uploads/
+uploads/*
+static/images
+static/images/
+static/images/*
+
+# =========================
+# Repomix / generated reports
+# =========================
+repomix-output.xml
+repomix-output*
+project-tree.txt
+
+# =========================
+# OS / editor files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode
+.vscode/
+.idea
+.idea/
+
+# =========================
+# Local certificates / private keys
+# =========================
+*.pem
+*.key
+*.crt
+*.csr

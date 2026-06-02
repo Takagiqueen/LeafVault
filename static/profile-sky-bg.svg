@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#67c8f6"/>
+      <stop offset="0.58" stop-color="#b8e9ff"/>
+      <stop offset="1" stop-color="#f8fdff"/>
+    </linearGradient>
+    <radialGradient id="cloud" cx="50%" cy="48%" r="58%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.72" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9f7ff" stop-opacity="0.55"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="720" fill="url(#sky)"/>
+  <path d="M1016 96c92 7 164 31 226 73" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" opacity=".68"/>
+  <path d="M1042 105c78 7 141 28 193 62" fill="none" stroke="#e7f8ff" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+
+  <g filter="url(#soft)" opacity=".98">
+    <ellipse cx="212" cy="588" rx="275" ry="152" fill="url(#cloud)"/>
+    <ellipse cx="492" cy="530" rx="312" ry="202" fill="url(#cloud)"/>
+    <ellipse cx="756" cy="526" rx="300" ry="188" fill="url(#cloud)"/>
+    <ellipse cx="1094" cy="584" rx="350" ry="164" fill="url(#cloud)"/>
+    <ellipse cx="720" cy="446" rx="210" ry="134" fill="#fff"/>
+    <ellipse cx="500" cy="456" rx="160" ry="112" fill="#fff"/>
+    <ellipse cx="892" cy="474" rx="170" ry="110" fill="#fff"/>
+  </g>
+
+  <path d="M0 372c178 34 359 50 543 49 283-2 563-58 857-24" fill="none" stroke="#5b3a1f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M0 369c178 34 359 50 543 49 283-2 563-58 857-24" fill="none" stroke="#8a633b" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+
+  <g stroke="#5b3a1f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(78 380) rotate(6)">
+      <path d="M0 0c-16 22-15 48 4 60 25 16 70-4 82-34l-5-8c-24 22-59 28-74 17-10-8-9-20 3-35z" fill="#f8fbff"/>
+      <path d="M35 2c4 25 10 43 17 58" fill="none" stroke="#7aa6ff"/>
+      <rect x="55" y="-18" width="13" height="29" rx="3" fill="#edc18e"/>
+    </g>
+    <g transform="translate(216 397) rotate(-7)">
+      <path d="M62-2c21 20 30 51 22 88-7 35-34 66-71 82-32 14-59 11-75-9-14-18-11-47 7-74 17-25 41-44 68-58 22-11 38-20 49-29z" fill="#c5eba2"/>
+      <path d="M-13 101c20-8 39-5 55 11" fill="none"/>
+      <circle cx="16" cy="47" r="5" fill="#5b3a1f"/>
+      <circle cx="58" cy="52" r="5" fill="#5b3a1f"/>
+      <path d="M27 78c14 11 31 10 43-3" fill="none"/>
+      <rect x="80" y="-25" width="13" height="31" rx="3" fill="#edc18e"/>
+    </g>
+    <g transform="translate(610 388) rotate(1)">
+      <path d="M-22 18c10-34 39-52 81-47 42 6 72 36 72 76 0 40-31 73-78 76-52 4-89-26-89-70 0-13 5-25 14-35z" fill="#ffd7ae"/>
+      <path d="M-35 81c-20 18-44 23-61 11 19-19 39-31 66-40" fill="#ffd7ae"/>
+      <path d="M118 80c22 16 45 18 61 3-22-17-43-27-69-32" fill="#ffd7ae"/>
+      <circle cx="28" cy="36" r="5" fill="#5b3a1f"/>
+      <circle cx="82" cy="38" r="5" fill="#5b3a1f"/>
+      <path d="M52 61c14 12 29 11 42-2" fill="none"/>
+      <rect x="-4" y="-30" width="13" height="31" rx="3" fill="#edc18e"/>
+      <rect x="111" y="-22" width="13" height="31" rx="3" fill="#edc18e"/>
+    </g>
+    <g transform="translate(914 386) rotate(8)">
+      <path d="M16 20c14-31 42-44 76-34 37 11 59 45 54 83-5 39-36 67-73 67-48 0-82-34-82-78 0-14 3-27 9-38z" fill="#fffdf8"/>
+      <path d="M34 16c-8-26-3-48 15-66 14 25 15 49 5 73" fill="#fffdf8"/>
+      <path d="M76 10c7-27 24-44 49-52 1 30-9 52-31 67" fill="#fffdf8"/>
+      <circle cx="54" cy="48" r="4.5" fill="#5b3a1f"/>
+      <circle cx="102" cy="50" r="4.5" fill="#5b3a1f"/>
+      <path d="M72 73c11 9 24 9 35-1" fill="none"/>
+      <rect x="4" y="-31" width="13" height="31" rx="3" fill="#edc18e"/>
+      <rect x="80" y="-28" width="13" height="31" rx="3" fill="#edc18e"/>
+    </g>
+    <g transform="translate(1138 370) rotate(10)">
+      <path d="M0 0h130l-16 128H17z" fill="#fffdf8"/>
+      <path d="M25 70c28 4 56 1 82-10" fill="none" stroke="#ffd7df" stroke-dasharray="8 8"/>
+      <rect x="24" y="-19" width="13" height="31" rx="3" fill="#edc18e"/>
+      <rect x="78" y="-22" width="13" height="31" rx="3" fill="#edc18e"/>
+    </g>
+  </g>
+</svg>

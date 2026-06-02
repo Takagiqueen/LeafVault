@@ -1,0 +1,125 @@
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.venv/
+
+# =========================
+# Test / type / lint cache
+# =========================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# =========================
+# Package metadata
+# =========================
+*.egg-info/
+.eggs/
+
+# =========================
+# Local secrets
+# =========================
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# =========================
+# Local runtime data
+# =========================
+data/
+backup/
+backups/
+tmp/
+.tmp/
+logs/
+.local-backup/
+.db_recovery/
+_db_recovery/
+
+*.log
+*.pid
+uvicorn*.log
+uvicorn*.pid
+
+# =========================
+# SQLite databases
+# =========================
+data.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+# =========================
+# User uploaded files
+# =========================
+uploads/*
+!uploads/.gitkeep
+
+static/images/*
+!static/images/.gitkeep
+
+# =========================
+# Frontend dependencies and build cache
+# =========================
+node_modules/
+.cache/
+.parcel-cache/
+.vite/
+dist/
+build/
+.next/
+
+# =========================
+# npm / yarn / pnpm logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Editor / OS files
+# =========================
+.vscode/
+.idea/
+.cursor/
+.DS_Store
+Thumbs.db
+
+# =========================
+# Repomix / generated reports
+# =========================
+repomix-output*
+project-tree.txt
+
+# =========================
+# Local certificates / private keys
+# =========================
+*.pem
+*.key
+*.crt
+*.csr
+.pytest_tmp/
+.tmp_pytest/
+docs/API_CONTRACT.md
+docs/ARCHITECTURE.md

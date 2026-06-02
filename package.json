@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aili531/LeafVault.git"
+    "url": "git+https://github.com/Takagiqueen/LeafVault.git"
   },
   "keywords": [
     "leafvault",
@@ -22,14 +22,14 @@
     "local-first",
     "encrypted-diary"
   ],
-  "author": "",
+  "author": "Takagiqueen",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/aili531/LeafVault/issues"
+    "url": "https://github.com/Takagiqueen/LeafVault/issues"
   },
-  "homepage": "https://github.com/aili531/LeafVault#readme",
-  "devDependencies": {
+  "homepage": "https://github.com/Takagiqueen/LeafVault#readme",
+  "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",

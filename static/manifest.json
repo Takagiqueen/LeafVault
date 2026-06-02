@@ -6,7 +6,7 @@
   "scope": "/",
   "display": "standalone",
   "background_color": "#f4f8f5",
-  "theme_color": "#22c55e",
+  "theme_color": "#f4f8f5",
   "icons": [
     {
       "src": "/static/launchericon-48x48.png",

@@ -6,6 +6,7 @@ to install Docker, start a browser, or make network requests.
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -24,10 +25,12 @@ def run_checks() -> tuple[list[str], list[str]]:
 
     sw_path = ROOT / "static/service-worker.js"
     manifest_path = ROOT / "static/manifest.json"
+    assetlinks_example_path = ROOT / "static/.well-known/assetlinks.example.json"
+    gitignore_path = ROOT / ".gitignore"
     pwa_status_path = ROOT / "static/js/modules/pwa-status.js"
     index_path = ROOT / "templates/index.html"
 
-    for path in (sw_path, manifest_path, pwa_status_path, index_path):
+    for path in (sw_path, manifest_path, assetlinks_example_path, gitignore_path, pwa_status_path, index_path):
         if not path.exists():
             errors.append(f"Missing required PWA file: {path.relative_to(ROOT)}")
     if errors:
@@ -35,6 +38,8 @@ def run_checks() -> tuple[list[str], list[str]]:
 
     sw = read("static/service-worker.js")
     manifest = read("static/manifest.json")
+    assetlinks_example = read("static/.well-known/assetlinks.example.json")
+    gitignore = read(".gitignore")
     pwa_status = read("static/js/modules/pwa-status.js")
     index_html = read("templates/index.html")
 
@@ -63,6 +68,44 @@ def run_checks() -> tuple[list[str], list[str]]:
 
     if '"start_url"' not in manifest or '"display"' not in manifest or '"icons"' not in manifest:
         errors.append("manifest.json missing start_url/display/icons")
+    try:
+        manifest_json = json.loads(manifest)
+    except json.JSONDecodeError as exc:
+        errors.append(f"manifest.json is not valid JSON: {exc}")
+        manifest_json = {}
+    if not isinstance(manifest_json, dict):
+        errors.append("manifest.json must contain a top-level object")
+        manifest_json = {}
+    icons = manifest_json.get("icons", [])
+    if not isinstance(icons, list):
+        errors.append("manifest.json icons must be a list")
+        icons = []
+    for size in ("192x192", "512x512"):
+        matches = [icon for icon in icons if isinstance(icon, dict) and icon.get("sizes") == size]
+        if not matches:
+            errors.append(f"manifest.json missing {size} icon")
+            continue
+        for icon in matches:
+            purpose_tokens = str(icon.get("purpose", "")).split()
+            if "any" not in purpose_tokens or "maskable" not in purpose_tokens:
+                errors.append(f"manifest.json {size} icon must include purpose: any maskable")
+
+    try:
+        assetlinks_json = json.loads(assetlinks_example)
+    except json.JSONDecodeError as exc:
+        errors.append(f"assetlinks.example.json is not valid JSON: {exc}")
+        assetlinks_json = None
+    if not isinstance(assetlinks_json, list):
+        errors.append("assetlinks.example.json must contain a top-level list")
+    if "delegate_permission/common.handle_all_urls" not in assetlinks_example:
+        errors.append("assetlinks.example.json missing handle_all_urls relation")
+    if "cn.leafvault.app" not in assetlinks_example:
+        errors.append("assetlinks.example.json missing package placeholder")
+    if "REPLACE_WITH_RELEASE_KEY_SHA256" not in assetlinks_example:
+        errors.append("assetlinks.example.json must keep the SHA-256 placeholder")
+    if "static/.well-known/assetlinks.json" not in gitignore.replace("\\", "/"):
+        errors.append(".gitignore must ignore static/.well-known/assetlinks.json")
+
     if "registerPWAUpdateHandler" not in pwa_status or "ensureOnlineForCloudFeature" not in pwa_status:
         errors.append("pwa-status.js missing update/offline handling hooks")
     if "window.addEventListener('offline'" not in pwa_status or "window.addEventListener('online'" not in pwa_status:

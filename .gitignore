@@ -36,6 +36,7 @@ htmlcov/
 .env.*
 !.env.example
 !.env.production.example
+static/.well-known/assetlinks.json
 
 # =========================
 # Local runtime data

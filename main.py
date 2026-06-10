@@ -87,6 +87,19 @@ async def service_worker():
         },
     )
 
+
+@app.get("/.well-known/assetlinks.json", include_in_schema=False)
+async def digital_asset_links():
+    assetlinks_path = STATIC_DIR / ".well-known" / "assetlinks.json"
+    if not assetlinks_path.exists() or not assetlinks_path.is_file():
+        raise HTTPException(status_code=404, detail="Asset Links not found")
+    return FileResponse(
+        assetlinks_path,
+        media_type="application/json",
+        headers={"Cache-Control": "no-cache, no-store, must-revalidate"},
+    )
+
+
 @app.get("/static/images/{image_name:path}")
 async def legacy_static_image(image_name: str):
     """兼容旧数据库中的 /static/images/* 路径。

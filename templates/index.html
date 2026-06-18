@@ -26,7 +26,12 @@
         .site-record-footer {
     position: relative;
     z-index: 1;
-    margin: 10px auto calc(88px + env(safe-area-inset-bottom));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px 8px;
+    margin: 16px auto calc(88px + env(safe-area-inset-bottom));
     padding: 6px 12px;
     text-align: center;
     font-size: 12px;
@@ -35,14 +40,35 @@
     background: transparent;
 }
 
-.site-record-footer a {
+.site-record-footer a,
+.site-record-link {
     color: #94a3b8;
     text-decoration: none;
 }
 
-.site-record-footer a:hover {
+.site-record-footer a:hover,
+.site-record-link:hover {
     color: #059669;
     text-decoration: underline;
+}
+
+.site-record-police {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.site-record-police-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.site-record-separator {
+    color: #cbd5e1;
 }
 
 @media (min-width: 768px) {
@@ -55,6 +81,12 @@
     .site-record-footer {
         font-size: 10px;
         margin-bottom: calc(88px + env(safe-area-inset-bottom));
+    }
+
+    .site-record-police-icon {
+        width: 14px;
+        height: 14px;
+        flex-basis: 14px;
     }
 }
 
@@ -7605,10 +7637,27 @@ function triggerNativeRedo() {
 <script src="/static/js/modules/diary.js?v=71-image-src-normalize"></script>
 <script src="/static/js/modules/app-startup.js?v=55-csp-vendor"></script>
 <footer class="site-record-footer" aria-label="网站备案信息">
-    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+    <a class="site-record-link"
+       href="https://beian.miit.gov.cn/"
+       target="_blank"
+       rel="noopener noreferrer">
         渝ICP备202601100号
     </a>
-    <!-- 自托管部署时请替换为你自己的 ICP 备案号 -->
+
+    <span class="site-record-separator" aria-hidden="true">｜</span>
+
+    <a class="site-record-link site-record-police"
+       href="https://beian.mps.gov.cn/#/query/webSearch?code=50022302000919"
+       target="_blank"
+       rel="noreferrer noopener">
+        <img class="site-record-police-icon"
+             src="/static/beian-gongan.png"
+             alt=""
+             width="16"
+             height="16"
+             loading="lazy">
+        <span>渝公网安备50022302000919号</span>
+    </a>
 </footer>
 </body>
 </html>

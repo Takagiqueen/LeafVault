@@ -24,20 +24,29 @@
         /* 移除了 body 写死的 padding-bottom */
         body { background-color: #f4f8f5; } 
         .site-record-footer {
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 20;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 4px 8px;
-    margin: 16px auto calc(88px + env(safe-area-inset-bottom));
-    padding: 6px 12px;
+    gap: 4px 10px;
+
+    max-width: min(92vw, 760px);
+    padding: 4px 12px;
+
     text-align: center;
     font-size: 12px;
     line-height: 1.5;
     color: #94a3b8;
-    background: transparent;
+    background: rgba(244, 248, 245, 0.72);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .site-record-footer a,
@@ -57,6 +66,7 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    white-space: nowrap;
 }
 
 .site-record-police-icon {
@@ -71,16 +81,13 @@
     color: #cbd5e1;
 }
 
-@media (min-width: 768px) {
-    .site-record-footer {
-        margin-bottom: 14px;
-    }
-}
-
 @media (max-width: 768px) {
     .site-record-footer {
+        bottom: calc(92px + env(safe-area-inset-bottom));
+        max-width: calc(100vw - 24px);
+        padding: 4px 8px;
         font-size: 10px;
-        margin-bottom: calc(88px + env(safe-area-inset-bottom));
+        background: rgba(244, 248, 245, 0.64);
     }
 
     .site-record-police-icon {

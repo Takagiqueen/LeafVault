@@ -120,6 +120,16 @@ project-tree.txt
 *.key
 *.crt
 *.csr
+*.jks
+*.keystore
+*.p12
+*.apk
+*.aab
+*.idsig
+keystore.properties
+signing.properties
+apps/android-capacitor/android/local.properties
+apps/android-capacitor/android/.gradle/
 .pytest_tmp/
 .tmp_pytest/
 docs/API_CONTRACT.md

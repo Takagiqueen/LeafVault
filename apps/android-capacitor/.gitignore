@@ -1,0 +1,16 @@
+node_modules/
+
+android/local.properties
+android/.gradle/
+android/**/build/
+android/app/debug/
+android/app/release/
+
+*.apk
+*.aab
+*.idsig
+*.jks
+*.keystore
+*.p12
+keystore.properties
+signing.properties

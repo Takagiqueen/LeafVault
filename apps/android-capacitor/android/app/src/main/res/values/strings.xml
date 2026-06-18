@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LeafVault</string>
+    <string name="title_activity_main">LeafVault</string>
+    <string name="package_name">cn.leafvault.app</string>
+    <string name="custom_url_scheme">cn.leafvault.app</string>
+</resources>

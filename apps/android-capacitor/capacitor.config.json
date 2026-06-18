@@ -1,0 +1,18 @@
+{
+  "appId": "cn.leafvault.app",
+  "appName": "LeafVault",
+  "webDir": "www",
+  "backgroundColor": "#f4f8f5",
+  "server": {
+    "url": "https://leafvault.cn",
+    "cleartext": false,
+    "allowNavigation": [
+      "leafvault.cn"
+    ]
+  },
+  "android": {
+    "backgroundColor": "#f4f8f5",
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  }
+}
